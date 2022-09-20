@@ -1,0 +1,85 @@
+<div style="background-color: rgb(202, 200, 200) !important;" >
+  <mat-toolbar color="primary">
+    <span  style="margin-left: 50% ;">List of Users</span>
+  
+  </mat-toolbar>
+  
+  
+  <mat-drawer-container class="example-container">
+    <mat-drawer mode="side" style="width: 300px;" opened>
+       
+  <mat-card>
+    <mat-card-header>
+      <img class="example-header-image" mat-card-avatar src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png">    
+  
+      
+    </mat-card-header>
+    
+    
+  </mat-card>
+  
+  <mat-card style="margin-top: 2px;">
+    <mat-card-header>
+      <a routerLink="/home">Home</a>
+    </mat-card-header>
+    
+    
+  </mat-card>
+  
+  <mat-card style="margin-top: 2px;">
+    <mat-card-header>
+      <a routerLink="/">Log Out</a>
+    </mat-card-header>
+    
+    
+  </mat-card>
+  
+    </mat-drawer>
+    <mat-drawer-content>
+      <mat-card>
+        <mat-form-field style="margin-top: 40px;" appearance="standard">
+          <mat-label>Search</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Filter the Name" #input>
+        </mat-form-field>
+     
+     
+        <div class="mat-elevation-z8">
+          <table mat-table [dataSource]="dataSource" matSort>
+        
+            <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+        
+            <!-- Position Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell mat-sort-header *matHeaderCellDef> ID</th>
+              <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+        
+            <!-- Name Column -->
+            <ng-container matColumnDef="login">
+              <th mat-header-cell mat-sort-header *matHeaderCellDef> Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.login}} </td>
+            </ng-container>
+        
+        
+        
+        
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr (click)="displayData(row)" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+        
+          </table>
+        
+          <mat-paginator #paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+        
+        </div>
+      </mat-card>
+       
+          
+        
+    
+    </mat-drawer-content>
+  </mat-drawer-container>
+  
+</div>

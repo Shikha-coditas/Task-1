@@ -1,0 +1,66 @@
+<mat-toolbar color="primary">
+  <span  style="margin-left: 50% ;">User Details</span>
+
+</mat-toolbar>
+
+ 
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>
+    <mat-card>
+      <mat-card-header>
+        <img class="example-header-image" mat-card-avatar src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png">    
+    
+        
+      </mat-card-header>
+      
+      
+    </mat-card>
+    
+    <mat-card style="margin-top: 2px;">
+      <mat-card-header>
+        <a routerLink="/home">Home</a>
+      </mat-card-header>
+      
+      
+    </mat-card>
+    
+    <mat-card style="margin-top: 2px;">
+      <mat-card-header>
+        <a routerLink="/">Log Out</a>
+      </mat-card-header>
+      
+      
+    </mat-card>
+  </mat-drawer>
+
+
+
+
+
+  <mat-drawer-content style="height: 550px;">
+    <mat-card class="container-1">
+      <mat-card-header>
+        <img class="example-header-image-1" mat-card-avatar src="{{ http.data.avatar_url }}" alt="Shiba Inu">    
+  
+        
+      </mat-card-header>
+      
+      
+  </mat-card>
+
+  <mat-card style="margin: 10px;" class="container-2">
+    
+    <mat-list>
+      <mat-list-item>Name -  {{ http.data.login }}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Github Url - {{ http.data.html_url }}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Node Id - {{ http.data.node_id }}</mat-list-item>
+    </mat-list>
+  
+  </mat-card>
+  
+  
+  
+  </mat-drawer-content>
+</mat-drawer-container>

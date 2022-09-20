@@ -1,0 +1,25 @@
+table {
+  width: 100%;
+}
+
+.example-header-image{
+  height: 150px;
+  width: 150px;
+  border-radius: 30px;
+  margin-left: 65px;
+}
+
+a{
+text-decoration: none;
+font-size: 18px;
+color: black;
+text-align: center;
+}
+
+.mat-row:hover {
+  background-color: rgb(218, 218, 226);
+}
+
+a:hover {
+  color: blue;
+}
